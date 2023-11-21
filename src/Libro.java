@@ -1,12 +1,7 @@
 public class Libro {
-    String tituloLibro,autorLibro;
-    int numeroPagina;
-
-    public Libro(String tituloLibro, String autorLibro, int numeroPagina) {
-        this.tituloLibro = tituloLibro;
-        this.autorLibro = autorLibro;
-        this.numeroPagina = numeroPagina;
-    }
+    private String tituloLibro;
+    private String autorLibro;
+    private int numeroPagina;
 
     public String getTituloLibro() {
         return tituloLibro;
@@ -29,6 +24,12 @@ public class Libro {
     }
 
     public void setNumeroPagina(int numeroPagina) {
+        this.numeroPagina = numeroPagina;
+    }
+
+    public Libro(String tituloLibro, String autorLibro, int numeroPagina) {
+        this.tituloLibro = tituloLibro;
+        this.autorLibro = autorLibro;
         this.numeroPagina = numeroPagina;
     }
 }

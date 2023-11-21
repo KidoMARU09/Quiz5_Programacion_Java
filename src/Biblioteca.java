@@ -1,14 +1,26 @@
-import java.util.LinkedList;
+import java.util.ArrayList;
+
 public class Biblioteca {
-    String ListaLibros;
+    private ArrayList<Libro> librosDisponibles;
 
-    public void registrarLibro(){
-
+    public Biblioteca() {
+        this.librosDisponibles = new ArrayList<>();
     }
-    public void BuscarLibro(){
+    public void registrarLibro(Libro libro){
+        librosDisponibles.add(libro);
     }
-    public void MostrarLibrosDisponibles(){
-
+    public Libro buscarLibro(String tituloLibro){
+        for (Libro libro : librosDisponibles) {
+            if (libro.getTituloLibro().equalsIgnoreCase(tituloLibro)) {
+                return libro;
+            }
+        }
+        return null;
     }
-
+    public void mostrarLibrosDisponibles(){
+        System.out.println("Libros disponibles en la biblioteca:");
+        for (Libro libro : librosDisponibles) {
+            System.out.println("Título: " + libro.getTituloLibro() + ", Autor: " + libro.getAutorLibro() + ", Páginas: " + libro.getNumeroPagina());
+        }
+    }
 }
